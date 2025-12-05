@@ -21,11 +21,7 @@ class OCRService:
             logger.info("Initializing PaddleOCR...")
             self.ocr = PaddleOCR(
                 use_angle_cls=True,      # Handle rotated text
-                lang='en',                # Default language
-                use_gpu=False,            # Cloud Run uses CPU
-                enable_mkldnn=True,       # Performance boost in containers
-                cpu_threads=1,            # Single thread for stability
-                show_log=False            # Reduce log noise
+                lang='en'                 # Default language
             )
             logger.info("PaddleOCR initialized successfully")
         except Exception as e:
